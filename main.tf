@@ -4,16 +4,20 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.52.0"
     }
+    postgresql = {
+      source  = "cyrilgdn/postgresql"
+      version = "1.12.0"
+    }
   }
   required_version = ">= 1.1.0"
 
-  # cloud {
-  #   organization = "grupo23postech"
+  cloud {
+    organization = "grupo23postech"
 
-  #   workspaces {
-  #     name = "iac-lanchonetedarua-database"
-  #   }
-  # }
+    workspaces {
+      name = "iac-lanchonetedarua-database"
+    }
+  }
 }
 
 provider "aws" {
