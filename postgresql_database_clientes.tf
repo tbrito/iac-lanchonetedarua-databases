@@ -9,7 +9,7 @@ provider "postgresql" {
   superuser = false
 }
 
-resource "postgresql_database" "produtos" {
-    name = "produtos"
+resource "postgresql_database" "cliente" {
+    name = "clientes"
     connection_limit = 100
 }

@@ -7,7 +7,7 @@ resource "aws_db_instance" "lanchonetedaruadb" {
   engine_version         = "15.3"
   parameter_group_name   = aws_db_parameter_group.lanchonetedaruadb.name
 
-  db_name                = "pedidos"
+  # db_name                = "pedidos"
   username               = "postgres"
   password               = "QE1muGg0fwsepsH"
 
