@@ -1,6 +1,6 @@
 # Database product
 provider "postgresql" {
-  host      = "lanchonetedaruadb.co2eflozi4t9.us-east-1.rds.amazonaws.com"
+  host      = aws_db_instance.lanchonetedaruadb.address #"lanchonetedaruadb.co2eflozi4t9.us-east-1.rds.amazonaws.com"
   port      = 5432
   database  = "postgres"
   username  = "postgres"
