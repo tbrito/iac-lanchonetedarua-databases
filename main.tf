@@ -11,13 +11,13 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-  # cloud {
-  #   organization = "grupo23postech"
+  cloud {
+    organization = "grupo23postech"
 
-  #   workspaces {
-  #     name = "iac-lanchonetedarua-database"
-  #   }
-  # }
+    workspaces {
+      name = "iac-lanchonetedarua-database"
+    }
+  }
 }
 
 provider "aws" {
