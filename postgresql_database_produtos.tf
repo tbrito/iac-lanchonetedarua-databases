@@ -1,3 +1,5 @@
+# Database product
+
 provider "postgresql" {
     host = "lanchonetedaruadb.co2eflozi4t9.us-east-1.rds.amazonaws.com"
     port = 5432
