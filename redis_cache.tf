@@ -1,4 +1,4 @@
-resource "aws_elasticache_cluster" "lanchonentedarua" {
+resource "aws_elasticache_cluster" "lanchonentedarua_cache" {
   cluster_id           = "cluster-lanchonete"
   engine               = "redis"
   node_type            = "cache.m4.large"
