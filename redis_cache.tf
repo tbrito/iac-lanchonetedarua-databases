@@ -1,8 +1,20 @@
-resource "aws_elasticache_cluster" "lanchonentedaruacache" {
-  cluster_id           = "cluster-lanchonete"
-  engine               = "redis"
-  node_type            = "cache.m4.large"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.redis3.2"
-  port                 = 6379
+resource "aws_elasticache_parameter_group" "main" {
+  name   = "testing-redis-ecache-param"
+  family = "redis3.2"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+resource "aws_elasticache_cluster" "main" {
+  cluster_id = "testing-redis-ecache"
+  engine = "redis"
+  node_type = "cache.t2.micro"
+  num_cache_nodes = 1
+  port = 6379
+  #security_group_ids = ["${var.elasticache_security_groups}"]
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 }
