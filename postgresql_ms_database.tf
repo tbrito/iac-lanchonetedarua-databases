@@ -33,3 +33,8 @@ resource "postgresql_database" "checkout" {
     name = "checkout"
     connection_limit = 100
 }
+
+resource "postgresql_database" "pedidos" {
+    name = "pedidos"
+    connection_limit = 100
+}
