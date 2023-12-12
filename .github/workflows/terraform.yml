@@ -36,7 +36,7 @@ jobs:
       continue-on-error: true
       with:
         path: .
-        workspace: ${{ github.head_ref }}
+        workspace: "iac-lanchonetedarua-database"
   
     # # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     # - name: Terraform Init
