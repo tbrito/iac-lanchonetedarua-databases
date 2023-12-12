@@ -35,7 +35,7 @@ jobs:
       id: first_try
       continue-on-error: true
       with:
-        path: "main.tf"
+        path: "iac-lanchonetedarua-databases"
         workspace: "iac-lanchonetedarua-database"
   
     # # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
