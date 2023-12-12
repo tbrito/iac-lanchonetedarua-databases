@@ -35,14 +35,9 @@ jobs:
       id: first_try
       continue-on-error: true
       with:
+        path: .
         workspace: ${{ github.head_ref }}
   
-    - name: Retry failed destroy
-      uses: dflook/terraform-destroy-workspace@v1
-      if: ${{ steps.first_try.outputs.failure-reason == 'destroy-failed' }}
-      with:
-        workspace: ${{ github.head_ref }}
-
     # # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     # - name: Terraform Init
     #   run: terraform init
