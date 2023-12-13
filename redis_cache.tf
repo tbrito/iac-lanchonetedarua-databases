@@ -7,7 +7,7 @@ resource "aws_elasticache_parameter_group" "main" {
   }
 }
 resource "aws_elasticache_cluster" "main" {
-  cluster_id = "testing-redis-ecache"
+  cluster_id = "lanchonete-redis-cache"
   engine = "redis"
   node_type = "cache.t2.micro"
   num_cache_nodes = 1
