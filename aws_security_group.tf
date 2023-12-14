@@ -1,4 +1,5 @@
 resource "aws_security_group" "postgres" {
+  vpc_id      = "${data.aws_vpc.default.id}"
   name        = "postgres-security-group"
   description = "Security group for Postgres database"
  

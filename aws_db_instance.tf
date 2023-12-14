@@ -9,7 +9,8 @@ resource "aws_db_instance" "lanchonetedaruadb" {
 
   username               = "postgres"
   password               = "QE1muGg0fwsepsH"
-
+  
+  db_subnet_group_name   = aws_db_subnet_group.default.name
   vpc_security_group_ids = [aws_security_group.postgres.id]
   publicly_accessible    = true
   skip_final_snapshot    = true
@@ -22,5 +23,14 @@ resource "aws_db_parameter_group" "lanchonetedaruadb" {
   parameter {
     name  = "log_connections"
     value = "1"
+  }
+}
+
+resource "aws_db_subnet_group" "default" {
+  name       = "main"
+  subnet_ids = [data.aws_subnet.subnet1a.id, data.aws_subnet.subnet1b.id]
+
+  tags = {
+    Name = "Lanchonete subnet group"
   }
 }
