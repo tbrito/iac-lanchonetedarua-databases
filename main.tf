@@ -8,39 +8,35 @@ terraform {
       source  = "cyrilgdn/postgresql"
       version = "1.12.0"
     }
-     mongodbatlas = {
-      source = "mongodb/mongodbatlas"
-      version = "0.9.0"
-    }
   }
   required_version = ">= 1.1.0"
 
-  cloud {
-    organization = "grupo23postech"
+  # cloud {
+  #   organization = "grupo23postechfiapi"
 
-    workspaces {
-      name = "iac-lanchonetedarua-database"
-    }
-  }
+  #   workspaces {
+  #     name = "lanchonete-da-rua-iac"
+  #   }
+  # }
 }
 
 # configuracoes aws - tiagoBrito
 provider "aws" {
   region = "us-east-1"
-  access_key = "ASIAWZ6JU6KTOXQDAYKD"
-  secret_key = "sKI3gIWKUwW+rhPuS5eCx77zbcSkBrhXlazktBG1"
-  token = "FwoGZXIvYXdzEBYaDHKW3fppRB4R0DBTKiLFAfrgqFScopJRgMEaqqgN2ZLFeaira8w5KgxgthEzHvDoVzGsoYKS9VMX/hX0xYUGpI7m9VmOC8gqofuHG1wE7eNEssaq8GuB58FCCoEJkN6TLYBSuTsnYhNofhwgddUIXpcLvG9Oo1K9jReyetWqKbJVpiMdEtAEEgXJ2kQ699kW46NuYCuwpSHeKZTk5bfgWb0cJF/s4ej3WrRw/kSDEMmwtzCoy36OaYnmOJw5wX7sTuT2Il57UPoqoaGUQHoQVsxLi5K3KKHHm60GMi09YeuOCnoORPLpGfm22r9WsDcTLqnWf0mta7+z9eX0hXlJLzG7a6YtPzwslOI="
+  access_key = var.client_key
+  secret_key = var.client_secret
+  # token = "FwoGZXIvYXdzEEsaDKyNATan2q7yYy0xlCLFAZxRAaY/4eHn7W1AJgsYQCPh/SemX7U6Cdraa8qEyS2MmDX7I7pYNd4VV1XG+eq7wc1qXMsNuyAI0MUieUjN09t1EK1Kl+H+aG3Lf5VNEW8ZhXxcpCrhRgAMBa3r1QLMgdbqZGNOgzSKE9ZjxfUiAqIk7ze60JqK5kPWpi6ZFxqcnZ9VeJB7Y6E+5RveTah6bBICrTU/2JCgr4J70qeE1FSsFjhg0r6w2crJbAyPVevo19VsbmbwTIlLGjS1n4KqnrLj7rioKMy7360GMi0wpKuR4hLb4zReVEA85Dc8yHSjjSYbDwb6La8raWIqxj8nDbSrxwnm8Cd6CVk="
 }
 
 
 data "aws_subnet" "subnet1a" {
-  id = "subnet-04de00c5de4379413"
+  id = "subnet-03df6cdb0ce9d859b"
 }
 
 data "aws_subnet" "subnet1b" {
-  id = "subnet-08b81483df03e0a52"
+  id = "subnet-0e276900afb704937"
 }
 
 data "aws_vpc" "default" {
-  id = "vpc-004a9706c20b9ae57"
+  id = "vpc-04adaa77e36d1d98c"
 }
